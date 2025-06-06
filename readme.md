@@ -203,3 +203,304 @@ Este flujo ayuda a:
 - Mantener el código limpio y estable.
 - Trabajar en equipo sin pisarse los cambios.
 - Detectar errores antes de que lleguen a producción.
+
+
+## 🚀 Subir proyecto local a repositorio vacío con rama de desarrollo
+
+1. Inicializa Git en tu carpeta local (si aún no lo hiciste):
+
+    ```bash
+    git init
+    ```
+
+2. Conecta tu repositorio local con el remoto (cambia la URL por la de tu repo):
+
+    ```bash
+    git remote add origin https://github.com/tu-usuario/tu-repo.git
+    ```
+
+3. Crea y cambia a una rama de desarrollo, por ejemplo `develop`:
+
+    ```bash
+    git checkout -b develop
+    ```
+
+4. Agrega todos los archivos y haz tu primer commit:
+
+    ```bash
+    git add .
+    git commit -m "Primer commit en rama develop"
+    ```
+
+5. Sube la rama `develop` al repositorio remoto:
+
+    ```bash
+    git push -u origin develop
+    ```
+
+6. Ve a GitHub y crea un Pull Request para fusionar `develop` en `main`.
+
+    > Nota: Si tu repo remoto está vacío y no tiene `main` creado aún, crea la rama `main` localmente y súbela:
+
+    ```bash
+    git checkout -b main
+    git push -u origin main
+    ```
+
+7. Después de revisar el PR, haz el merge desde GitHub.
+
+8. Una vez hecho el merge, borra la rama `develop` del remoto:
+
+    ```bash
+    git push origin --delete develop
+    ```
+
+9. Y borra la rama `develop` local:
+
+    ```bash
+    git branch -d develop
+    ```
+
+---
+
+## ⚠️ Cambiar rama principal en GitHub para borrar `develop`
+
+Si tu rama principal quedó como `develop` y quieres que sea `main`, sigue estos pasos:
+
+1. Crea la rama `main` localmente (si no existe):
+
+    ```bash
+    git checkout -b main
+    ```
+
+2. Súbela al remoto:
+
+    ```bash
+    git push -u origin main
+    ```
+
+3. En GitHub:
+
+    - Ve a **Settings** (Configuración) del repositorio.
+    - Selecciona **Branches** en el menú lateral.
+    - Cambia la **Default branch** de `develop` a `main`.
+    - Guarda los cambios.
+
+4. Ahora puedes borrar la rama `develop` remota:
+
+    ```bash
+    git push origin --delete develop
+    ```
+
+5. Y la rama `develop` local:
+
+    ```bash
+    git branch -d develop
+    ```
+
+---
+
+Este flujo garantiza que tu rama principal sea `main` y que uses una rama de desarrollo para organizar tus cambios antes de hacer merge.
+
+## 🔐 Configurar SSH para GitHub
+
+Sigue estos pasos para configurar una conexión SSH segura con GitHub:
+
+1. **Genera una clave SSH:**
+
+    - Abre tu terminal.
+    - Ejecuta el siguiente comando y sigue las instrucciones para crear la clave:
+      ```bash
+      ssh-keygen -t ed25519 -C "tu_correo@example.com"
+      ```
+
+2. **Inicia el agente SSH:**
+
+    ```bash
+    eval "$(ssh-agent -s)"
+    ```
+
+    Luego agrega tu clave privada:
+
+    ```bash
+    ssh-add ~/.ssh/id_ed25519
+    ```
+
+3. **Copia la clave pública:**
+
+    ```bash
+    cat ~/.ssh/id_ed25519.pub
+    ```
+
+    Copia el resultado que se muestra en pantalla.
+
+4. **Añade la clave a GitHub:**
+
+    - Ve a GitHub.
+    - Entra a **Settings** > **SSH and GPG keys**.
+    - Haz clic en **New SSH key**.
+    - Pega tu clave pública copiada y guarda.
+
+5. **Prueba la conexión:**
+
+    ```bash
+    ssh -T git@github.com
+    ```
+
+    Deberías ver un mensaje de éxito confirmando la conexión.
+
+---
+
+Con esto, habrás configurado SSH para GitHub de forma segura y eficiente.
+
+## 🍴 Forks y ⭐ Stars en GitHub
+
+### ¿Qué es un **fork**?
+
+Un **fork** 🥢 es una copia de un repositorio que se guarda en tu cuenta de GitHub. Es útil cuando:
+
+- Quieres contribuir a un proyecto pero **no tienes permisos** de escritura en el repositorio original.
+- Quieres probar cambios sin afectar el código original.
+
+Con un fork puedes:
+
+- Hacer tus propias modificaciones.
+- Crear ramas.
+- Subir cambios.
+- Luego, enviar un **Pull Request** al repositorio original para proponer tus cambios.
+
+---
+
+### ¿Qué es una **star**?
+
+Una **star** ⭐ es como marcar un repositorio como favorito. Sirve para:
+
+- Guardar proyectos que te gustan o quieres revisar después.
+- Seguir repositorios que consideras interesantes.
+- Mostrar apoyo a los proyectos de otros desarrolladores.
+
+No tiene impacto en el código, pero sí ayuda a descubrir y destacar proyectos populares.
+
+---
+
+📌 En resumen:
+
+| Acción   | ¿Qué hace?                                                                 |
+|----------|------------------------------------------------------------------------------|
+| **Fork** | Crea una copia del repositorio en tu cuenta para modificarlo libremente.   |
+| **Star** | Marca un repositorio como favorito para seguirlo o guardarlo.              |
+
+
+# 🚀 Comandos Git esenciales
+
+| Comando    | Descripción breve                                | Uso típico                                 |
+|------------|-------------------------------------------------|-------------------------------------------|
+| `git pull` | Trae cambios del repositorio remoto y los fusiona automáticamente en tu rama actual. | Actualizar tu rama local con los últimos cambios remotos en un solo paso. |
+| `git push` | Envía tus commits locales a un repositorio remoto. | Subir tus cambios para compartirlos o respaldarlos en el servidor remoto. |
+| `git fetch`| Descarga los últimos cambios del remoto sin fusionarlos. | Obtener los cambios remotos para revisarlos antes de integrarlos manualmente. |
+| `git merge`| Fusiona otra rama en la rama actual. | Combinar los cambios descargados o de otra rama en tu rama activa. |
+
+---
+
+## ⚡ Explicación rápida
+
+- **git pull** = `git fetch` + `git merge` automático.  
+- **git fetch** solo descarga actualizaciones, no las aplica.  
+- Para integrar cambios después de un fetch, se usa **git merge** manualmente.  
+- **git push** es para subir tus cambios locales al remoto.
+
+---
+
+## 💻 Ejemplos
+
+```bash
+# Actualizar tu rama actual con los últimos cambios remotos
+git pull origin main
+
+# Subir tus commits locales a la rama main del remoto
+git push origin main
+
+# Descargar actualizaciones del remoto sin fusionar
+git fetch origin
+
+# Fusionar la rama remota descargada con tu rama local
+git merge origin/main
+```
+
+# 🐞 Issues y 💬 Discussions en GitHub
+
+| Concepto       | Descripción                                    | Uso común                                   |
+|----------------|------------------------------------------------|---------------------------------------------|
+| **Issues**     | Espacio para reportar bugs, pedir mejoras o tareas concretas. | Registrar y seguir problemas o solicitudes específicas del proyecto. |
+| **Discussions**| Foro para debates más abiertos, preguntas o intercambio de ideas. | Conversaciones generales que no necesariamente son problemas o tareas. |
+
+---
+
+# 📋 Plantillas de Issues
+
+Las **plantillas de issues** ayudan a estandarizar la información que los colaboradores deben proporcionar al crear un nuevo issue, facilitando su gestión y resolución.
+
+## ¿Cómo funcionan?
+
+- Se crean archivos `.md` dentro de la carpeta `.github/ISSUE_TEMPLATE/` en el repositorio.  
+- Al abrir un nuevo issue, GitHub mostrará estas plantillas para que el usuario elija y complete.  
+
+## Ejemplo básico de plantilla para reporte de bugs:
+
+```markdown
+---
+name: Reporte de Bug
+about: Reporta un problema que encontraste
+title: "[Bug]"
+labels: bug
+assignees: ''
+
+---
+
+**Describe el problema**
+Una descripción clara y concisa del bug.
+
+**Pasos para reproducirlo**
+1. Paso uno
+2. Paso dos
+3. ...
+
+**Comportamiento esperado**
+Qué esperabas que pasara.
+
+**Capturas de pantalla**
+Si aplica, añade imágenes para ayudar a explicar el problema.
+
+**Información adicional**
+Otros detalles o contexto.
+```
+
+# 🔀 Pull Requests (PR)
+
+Un **Pull Request** es una solicitud para que los cambios realizados en una rama (branch) sean revisados y eventualmente fusionados (merge) a otra rama, típicamente la rama principal (`main` o `master`). Los pull requests son muy útiles en equipos porque permiten revisar código, discutir cambios y mantener la calidad antes de integrar nuevas funcionalidades.
+
+| Concepto        | Descripción                                                                                  |
+|-----------------|----------------------------------------------------------------------------------------------|
+| ¿Qué es?        | Solicitud para fusionar cambios de una rama a otra.                                         |
+| ¿Para qué?      | Revisar, discutir y aprobar cambios antes de integrarlos al código principal.               |
+| Flujo típico    | 1. Crear rama → 2. Hacer commits → 3. Abrir Pull Request → 4. Revisión y discusión → 5. Merge |
+| Beneficios      | Facilita la colaboración, evita errores, mejora calidad y mantiene historial claro.         |
+| Herramientas    | GitHub, GitLab, Bitbucket, etc., que ofrecen interfaces visuales para gestionar PRs.        |
+
+---
+
+## 📝 Otras notas útiles
+
+- Puedes combinar `git add` y `git commit` con el comando:
+  
+  ```bash
+  git commit -am "mensaje commit"
+
+> Esto añade y comitea archivos que ya están siendo seguidos por Git (tracked).
+
+Cuando borras una rama en GitHub, solo se elimina del repositorio remoto. La rama local sigue existiendo hasta que la eliminas manualmente en tu entorno local. Para borrar la rama local, usa:
+
+```bash
+git branch -d nombre-de-la-rama
+```
+
