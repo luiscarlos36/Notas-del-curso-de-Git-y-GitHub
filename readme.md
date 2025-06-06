@@ -138,3 +138,68 @@ Los **conflictos** ocurren cuando Git no puede fusionar (*merge*) automáticamen
 - **Haz commits frecuentes**, así es más fácil encontrar el origen de un conflicto.
 - **Antes de fusionar una rama, actualízala con** `git pull` para minimizar posibles conflictos.
 - **Comunica con tu equipo** si hay muchos cambios sobre los mismos archivos.
+
+## 🛠 ¿Qué es cada cosa?
+
+| Término     | Descripción                                                                 |
+|-------------|------------------------------------------------------------------------------|
+| **Git**     | Sistema de control de versiones para llevar un historial de cambios en archivos. |
+| **GitHub**  | Plataforma online para almacenar repositorios Git y colaborar con otros.       |
+| **Git Bash**| Terminal que permite ejecutar comandos de Git en Windows.                      |
+
+---
+
+## 🔀 Conceptos Básicos
+
+### 🧾 ¿Por qué usar ramas?
+
+- Trabajar en **ramas separadas** (como `feature`, `fix`, etc.) evita romper el código que ya funciona.
+- Se usa el comando para crear y cambiar a una nueva rama:
+  ```bash
+  git checkout -b nombre-de-rama
+  ```
+
+### 📤 ¿Cómo subir los cambios?
+
+1. Guarda los cambios localmente:
+   ```bash
+   git add .
+   git commit -m "Descripción de los cambios"
+   ```
+2. Súbelos a GitHub:
+   ```bash
+   git push origin nombre-de-rama
+   ```
+
+---
+
+## 🔍 Revisión de Código (Code Review)
+
+- Cuando terminas una funcionalidad, haces un **Pull Request** desde tu rama (`feature/xyz`) hacia la rama principal (`main` o `master`).
+- Antes de hacer el merge (unir ramas), otro miembro del equipo debe revisar tu código.
+- ✅ **Regla de oro:**  
+  **“No hagas Pull Request si no te han hecho Code Review”** 😉
+
+---
+
+## 🧩 Flujo de trabajo recomendado
+
+1. Crea una nueva rama:  
+   ```bash
+   git checkout -b feature/nombre
+   ```
+2. Trabaja en tus cambios.
+3. Haz commits regularmente.
+4. Sube tu rama a GitHub:  
+   ```bash
+   git push origin feature/nombre
+   ```
+5. Abre un Pull Request.
+6. Espera el Code Review.
+7. Si es aprobado, haz **merge** a `main`.
+
+Este flujo ayuda a:
+
+- Mantener el código limpio y estable.
+- Trabajar en equipo sin pisarse los cambios.
+- Detectar errores antes de que lleguen a producción.
