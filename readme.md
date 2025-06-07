@@ -504,3 +504,323 @@ Cuando borras una rama en GitHub, solo se elimina del repositorio remoto. La ram
 git branch -d nombre-de-la-rama
 ```
 
+---
+
+## 📝 Documentación con GitHub
+
+### 1. 🧾 Uso de Markdown para documentación
+
+Markdown es un lenguaje de marcado ligero que permite escribir texto con formato de forma sencilla y legible. GitHub lo utiliza para mostrar archivos `.md` como páginas bien formateadas, lo que lo hace ideal para documentación de proyectos.
+
+**✨ Ventajas de usar Markdown:**
+- ✅ Es fácil de escribir y leer en texto plano.
+- ✅ Permite estructurar contenido con títulos, listas, tablas, enlaces, imágenes, código, etc.
+- ✅ Se renderiza automáticamente en GitHub.
+
+**📌 Ejemplo básico de Markdown:**
+
+```markdown
+# Título grande
+## Título mediano
+### Título pequeño
+
+**Texto en negrita**  
+*Texto en cursiva*
+
+- Lista
+- Con
+- Viñetas
+
+[Enlace a GitHub](https://github.com)
+
+```python
+# Bloque de código
+print("Hola mundo")
+```
+
+
+---
+
+### 2. 📚 Uso de Wikis
+
+GitHub Wikis permiten crear documentación más extensa y estructurada fuera del `README.md`, en forma de páginas interconectadas. Es útil cuando necesitas una guía del proyecto, manual de usuario o especificaciones técnicas más detalladas.
+
+**📖 Ventajas de usar Wikis:**
+- 🧩 Ideal para documentación extensa que se puede organizar en secciones.
+- 🛠️ Se edita con Markdown (o también con un editor visual).
+- 🕓 Cada página del Wiki tiene su propio historial de cambios.
+
+**📂 Ejemplo de estructura de Wiki:**
+
+Inicio
+
+├── Introducción
+
+├── Instalación
+
+├── Uso
+
+└── Preguntas frecuentes (FAQ)
+
+
+**🛎️ Para activar el Wiki:**  
+En tu repositorio, ve a la pestaña "Wiki" y haz clic en "Create the first page".
+
+---
+
+### 3. 📄 Uso de GitHub Gist
+
+GitHub Gist es una herramienta para compartir fragmentos de código, notas o archivos de manera rápida. Puede ser público o privado, y cada Gist tiene su propia URL.
+
+**🔍 Usos comunes:**
+- 🧪 Compartir código con otros sin crear un repositorio completo.
+- 💾 Guardar configuraciones o comandos que se usan frecuentemente.
+- 📤 Crear ejemplos reproducibles para foros o tutoriales.
+
+**🚀 Ventajas de los Gists:**
+- 📝 Soportan Markdown y resaltado de sintaxis para muchos lenguajes.
+- 📁 Pueden tener múltiples archivos.
+- 🔁 Puedes clonarlos como repositorios de Git.
+
+**💡 Ejemplo de Gist en Markdown:**
+```markdown
+### Comando útil de Git
+
+```bash
+git log --oneline --graph --all
+```
+
+Este comando muestra un historial visual de commits en forma de árbol.
+
+
+🔗 Puedes crear un Gist desde: [https://gist.github.com](https://gist.github.com)
+
+---
+
+
+# 🌐 GitHub Codespaces
+
+**GitHub Codespaces** es una herramienta que permite crear entornos de desarrollo en la nube, directamente integrados con GitHub.
+
+### 🚀 Ventajas principales
+
+| Ventaja           | Descripción                                                                 |
+|-------------------|-----------------------------------------------------------------------------|
+| ⚙️ Configuración rápida | Puedes crear entornos listos para usar con un solo clic. Ahorra mucho tiempo.  |
+| 🌍 Accesibilidad       | Accede a tu entorno desde cualquier dispositivo con internet.              |
+| 🤝 Colaboración        | Trabaja en equipo en tiempo real, ideal para proyectos compartidos.       |
+| 🔗 Integración         | Funciona muy bien con otras herramientas de GitHub (pull requests, issues).|
+| 🎨 Personalización     | Puedes instalar extensiones y adaptar el entorno a tu gusto.              |
+
+GitHub Codespaces mejora la **productividad** y simplifica el **flujo de trabajo**, permitiéndote enfocarte más en programar y menos en configurar.
+
+## 👥 Programación Colaborativa con Live Share
+
+**Live Share** es una extensión de Visual Studio Code que permite colaborar en tiempo real con otros desarrolladores, como si estuvieran en la misma computadora.
+
+### 🔧 ¿Qué permite hacer Live Share?
+
+| Función                   | Descripción                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|
+| ✍️ Edición colaborativa   | Todos los participantes pueden escribir y editar el mismo código en tiempo real. |
+| 🧭 Navegación independiente | Cada persona puede moverse por el proyecto sin afectar a los demás.         |
+| 🛠️ Compartir terminal     | Puedes compartir la terminal para ejecutar comandos y ver resultados juntos. |
+| 🐞 Depuración conjunta     | Permite depurar el código colaborativamente, viendo los puntos de interrupción y valores. |
+| 🔒 Acceso controlado       | Puedes decidir qué archivos o funciones compartir, manteniendo el control.  |
+
+### ✅ Ventajas principales
+
+- No necesitas clonar el repositorio: el anfitrión comparte su entorno.
+- Facilita revisiones de código, mentorías o pair programming.
+- Ahorra tiempo y mejora la comunicación entre el equipo.
+
+Con **Live Share**, trabajar en equipo es más fácil y dinámico. Es como estar programando lado a lado, sin importar en qué parte del mundo estés.
+
+
+## ✏️ Uso del Editor Web de GitHub para Edición Rápida de Archivos
+
+GitHub permite editar archivos directamente desde el navegador, sin necesidad de clonar el repositorio ni usar herramientas externas.
+
+### ⚡ ¿Cómo acceder al editor web?
+
+- Estando en un repositorio, presiona la tecla `.` (punto) en tu teclado.
+- O cambia la URL de `github.com` a `github.dev`.
+
+👉 Esto abrirá una versión web de **Visual Studio Code** en tu navegador.
+
+### 🔧 ¿Qué se puede hacer?
+
+| Acción                    | Descripción                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|
+| 📝 Editar archivos        | Puedes hacer cambios rápidos en cualquier archivo del repositorio.          |
+| ➕ Crear/Eliminar archivos | Agrega nuevos archivos o elimina los que ya no necesitas.                   |
+| 🔄 Commit directo         | Guarda los cambios con un mensaje de commit, sin salir del navegador.       |
+| 📂 Navegar el proyecto    | Explora carpetas y archivos fácilmente como en un editor de escritorio.     |
+| 🔌 Instalar extensiones   | Puedes añadir extensiones básicas compatibles con el editor web.            |
+
+### ✅ Ventajas
+
+- Ideal para hacer **cambios rápidos** sin configurar nada.
+- Funciona en cualquier lugar con acceso a internet.
+- Útil para correcciones pequeñas, edición de documentación o revisión de código.
+
+El **editor web de GitHub** es una forma rápida y sencilla de modificar tu código sin salir del navegador. Perfecto para tareas ligeras o ediciones rápidas.
+
+
+## 🆚 Diferencias entre GitHub Codespaces y el Editor Web
+
+| Característica       | GitHub Codespaces                        | Editor Web de GitHub (`github.dev`)       |
+|----------------------|------------------------------------------|--------------------------------------------|
+| 💻 Potencia           | Entorno completo con backend (como VS Code en la nube) | Editor ligero solo para cambios rápidos     |
+| ⚙️ Personalización    | Soporta extensiones, terminal, depuración, configuraciones personalizadas | Limitado a ediciones básicas               |
+| 📦 Dependencias       | Puede instalar y ejecutar dependencias del proyecto | No ejecuta código ni instala paquetes       |
+| 🧪 Terminal y Debug   | Sí, como un entorno local                 | No disponible                               |
+| 🕐 Uso recomendado    | Desarrollo completo, proyectos grandes    | Ediciones rápidas, documentación, hotfixes |
+
+### 💡 En resumen
+
+- **Codespaces** = editor completo y potente.
+- **Editor Web** = editor rápido y liviano para cambios simples.
+
+## 🔐 Gestión de GitHub Tokens para Acceso Seguro a Repositorios
+
+GitHub usa **tokens personales de acceso (PAT)** en lugar de contraseñas para acceder a tu cuenta o repositorios de forma segura desde herramientas externas (como Git, VS Code o GitHub CLI).
+
+### 🧩 ¿Qué es un Personal Access Token (PAT)?
+
+Un **token** es como una contraseña temporal y controlada que puedes generar para:
+
+- Clonar repositorios privados
+- Hacer push/pull desde Git
+- Usar la GitHub CLI o integraciones
+
+### 🛠️ ¿Cómo se crea un token?
+
+1. Ve a: `Settings` > `Developer settings` > `Personal access tokens`.
+2. Haz clic en **"Generate new token"**.
+3. Selecciona los **permisos necesarios** (repos, workflow, etc.).
+4. Copia el token y guárdalo en un lugar seguro (¡solo se muestra una vez!).
+
+### 🔐 Buenas prácticas
+
+| Práctica                      | Por qué es importante                        |
+|-------------------------------|----------------------------------------------|
+| ✅ Dar solo permisos necesarios | Menos riesgo si se filtra el token           |
+| 📆 Establecer expiración       | Mejora la seguridad con tokens temporales    |
+| 🔑 Usar tokens diferentes      | Un token por herramienta o proyecto          |
+| ❌ Revocar tokens no usados    | Elimina tokens antiguos o sin uso            |
+
+### 💡 En resumen
+
+Los tokens hacen más **seguro** el acceso a tus repos desde otras herramientas. Son fáciles de generar y debes usarlos en lugar de tu contraseña personal.
+
+## 🛡️ Mitigación de Brechas de Seguridad en Repositorios GitHub
+
+GitHub ofrece varias herramientas y buenas prácticas para **proteger el código y evitar filtraciones** o ataques.
+
+### 🔧 Herramientas y funciones de seguridad
+
+| Función                      | ¿Para qué sirve?                                                           |
+|------------------------------|-----------------------------------------------------------------------------|
+| 🧪 GitHub Actions: Secret Scanning | Detecta si subiste accidentalmente claves o tokens al repo                |
+| 🔍 Dependabot Alerts          | Te avisa si tus dependencias tienen vulnerabilidades                       |
+| 🧬 Code Scanning              | Analiza tu código en busca de errores de seguridad                         |
+| 🔐 Branch Protection Rules    | Evita cambios directos a ramas importantes (como `main`) sin revisión      |
+| 📜 Audit Log                  | Registro de actividades para detectar comportamientos sospechosos          |
+
+### ✅ Buenas prácticas para evitar brechas
+
+- **Nunca subas claves o contraseñas** al repositorio.
+- Usa **.gitignore** para evitar subir archivos sensibles.
+- Revisa y acepta los **pull requests** antes de fusionarlos.
+- Configura **2FA (doble factor de autenticación)** en tu cuenta.
+- Usa **GitHub Secrets** para almacenar tokens y claves en GitHub Actions.
+
+### 💡 En resumen
+
+Proteger un repositorio no solo depende del código, sino también de usar las herramientas correctas y mantener buenas prácticas de seguridad en el equipo.
+
+## 📦 Gestión de Seguridad de Paquetes con Dependabot en Proyectos .NET
+
+**Dependabot** es una herramienta integrada en GitHub que ayuda a mantener actualizadas las dependencias de tu proyecto, especialmente para prevenir vulnerabilidades.
+
+### 🔄 ¿Qué hace Dependabot?
+
+| Función                      | Descripción                                                                 |
+|------------------------------|-----------------------------------------------------------------------------|
+| 🔔 Alertas de seguridad      | Te avisa cuando una dependencia tiene vulnerabilidades conocidas.           |
+| 📬 Pull requests automáticas | Crea PRs para actualizar paquetes a versiones seguras.                      |
+| 🔍 Monitoreo constante       | Revisa los archivos como `*.csproj` o `packages.config` en proyectos .NET. |
+
+### ⚙️ Cómo activar Dependabot en un proyecto .NET
+
+1. Asegúrate de tener un archivo `.github/dependabot.yml`.
+2. Configura el archivo para que revise tus dependencias `.NET`:
+```yaml
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+```
+
+3. GitHub comenzará a escanear y sugerir actualizaciones automáticamente.
+
+### ✅ Ventajas para proyectos .NET
+- Evita usar librerías obsoletas o inseguras.
+- Ahorra tiempo al automatizar actualizaciones.
+- Mantiene tu proyecto más estable y seguro con poco esfuerzo.
+
+### 💡 En resumen
+
+Dependabot es una herramienta esencial para mantener tus proyectos .NET seguros y actualizados, sin necesidad de hacerlo manualmente.
+
+## 🔒 Configuración de Repositorios Privados en GitHub (y uso de `.gitignore`)
+
+### 🔐 ¿Qué es un repositorio privado?
+
+Un **repositorio privado** es un proyecto en GitHub que **solo tú y tus colaboradores autorizados pueden ver y modificar**. Ideal para proyectos personales, comerciales o que aún no están listos para hacerse públicos.
+
+### ⚙️ ¿Cómo hacerlo privado?
+
+1. Al crear el repositorio, selecciona la opción **"Private"**.
+2. Si ya existe, ve a:  
+   `Settings > Danger Zone > Change repository visibility`.
+3. Solo tú o quienes invites podrán acceder.
+
+### 👥 Control de acceso
+
+- Puedes **invitar colaboradores** específicos desde la pestaña `Settings > Collaborators`.
+- También puedes crear equipos y usar **GitHub Organizations** para una gestión más avanzada.
+
+---
+
+## 📄 Uso de `.gitignore`
+
+El archivo `.gitignore` le dice a Git **qué archivos o carpetas no debe rastrear** (ni subir al repositorio).
+
+### 🧱 Ejemplos comunes para proyectos .NET:
+
+```gitignore
+bin/
+obj/
+*.user
+*.suo
+*.vs/
+.env
+```
+
+## ✅ ¿Por qué usar .gitignore?
+
+| Motivo                          | Beneficio                                                               |
+| ------------------------------- | ----------------------------------------------------------------------- |
+| 🚫 Evitar archivos innecesarios | No subes archivos de compilación, temporales o personales.              |
+| 🔐 Proteger información         | Evita subir archivos con claves, contraseñas o configuraciones locales. |
+| 🧹 Mantener limpio el repo      | Facilita el trabajo en equipo con un historial más claro y limpio.      |
+
+
+## 💡 En resumen
+- Los repos privados protegen tu código de miradas externas.
+- El archivo .gitignore te ayuda a mantener tu repo limpio, seguro y profesional.
+
